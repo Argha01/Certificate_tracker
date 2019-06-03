@@ -1,7 +1,6 @@
 package com.tcs.Certificate_Tracker;
 
 import java.sql.Timestamp;
-import java.util.*;
 import javax.persistence.*;
 
 @Entity
@@ -23,7 +22,7 @@ public class Nomination_details {
 	private Timestamp submit_time;
 	private Timestamp last_update_time;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id")
 	private Employee  emp;
 	

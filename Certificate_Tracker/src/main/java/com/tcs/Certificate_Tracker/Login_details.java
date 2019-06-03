@@ -7,12 +7,12 @@ import javax.persistence.*;
 @Entity
 public class Login_details implements Serializable{
 	
-	
+	private static final long serialVersionUID =1L;
 	private String password;
 	private String role;
 	
 	@Id
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id")
 	private Employee  emp;
 	
@@ -35,11 +35,5 @@ public class Login_details implements Serializable{
 	}
 	public void setRole(String role) {
 		this.role = role;
-	}
-	
-	
-	
-	
-	
-
+	}	
 }

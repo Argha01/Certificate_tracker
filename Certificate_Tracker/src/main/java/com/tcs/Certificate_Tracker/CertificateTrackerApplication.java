@@ -14,5 +14,4 @@ public class CertificateTrackerApplication {
 		System.out.println("Argha Here");
 		SpringApplication.run(CertificateTrackerApplication.class, args);
 	}
-
 }
