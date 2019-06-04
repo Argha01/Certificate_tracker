@@ -7,22 +7,18 @@ import javax.persistence.*;
 @Entity
 public class Login_details implements Serializable{
 	
+	@Id	
+	private Integer  employee_id;
 	private static final long serialVersionUID =1L;
 	private String password;
 	private String role;
 	
-	@Id
-	@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
-	@JoinColumn(name="employee_id")
-	private Employee  emp;
 	
-
-	
-	public Employee getEmp() {
-		return emp;
+	public Integer getEmployee_id() {
+		return employee_id;
 	}
-	public void setEmp(Employee emp) {
-		this.emp = emp;
+	public void setEmployee_id(Integer employee_id) {
+		this.employee_id = employee_id;
 	}
 	public String getPassword() {
 		return password;

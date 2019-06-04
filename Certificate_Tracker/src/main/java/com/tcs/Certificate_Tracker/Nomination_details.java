@@ -8,7 +8,6 @@ public class Nomination_details {
 
 	@Id
 	private long nomination_id;
-	//private int employee_id;
 	private String quarter_no;
 	private String certification_name;
 	private String certification_type;
@@ -25,6 +24,10 @@ public class Nomination_details {
 	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	@JoinColumn(name="employee_id")
 	private Employee  emp;
+	
+	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@JoinColumn(name="certification_id")
+	private Certification_Catalog  certcatlog;
 	
 	
 	public Employee getEmp() {

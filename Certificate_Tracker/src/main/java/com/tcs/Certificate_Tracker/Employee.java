@@ -19,8 +19,6 @@ public class Employee {
 	@OneToMany(mappedBy="emp",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Nomination_details> nomdtl;
 	
-	@OneToOne(mappedBy="emp")
-	private Login_details ldtls;
 	
 	public List<Nomination_details> getNomdtl() {
 		return nomdtl;
