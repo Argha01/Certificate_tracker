@@ -1,15 +1,13 @@
 package com.tcs.Certificate_Tracker;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Entity
-public class Login_details implements Serializable{
+@Table(name="Login_Details")
+public class LoginDetails{
 	
 	@Id	
 	private Integer  employee_id;
-	private static final long serialVersionUID =1L;
 	private String password;
 	private String role;
 	

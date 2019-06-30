@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Budget_Details")
-public class Budget_Details {
+public class BudgetDetails {
 	@Id
 	private int quarter_no;
 	private int total_budget;

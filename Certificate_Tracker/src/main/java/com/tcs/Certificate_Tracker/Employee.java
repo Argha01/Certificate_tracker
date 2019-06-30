@@ -16,16 +16,7 @@ public class Employee {
 	private String branch_name;
 	private String department_name;
 	
-	@OneToMany(mappedBy="emp",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Nomination_details> nomdtl;
 	
-	
-	public List<Nomination_details> getNomdtl() {
-		return nomdtl;
-	}
-	public void setNomdtl(List<Nomination_details> nomdtl) {
-		this.nomdtl = nomdtl;
-	}
 	public int getEmployee_id() {
 		return employee_id;
 	}

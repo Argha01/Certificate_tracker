@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.tcs.Certificate_Tracker.Employee;
 
 @Repository
-public interface Employee_Repo extends CrudRepository<Employee,Integer> {
+public interface EmployeeRepo extends CrudRepository<Employee,Integer> {
 	
 
 }

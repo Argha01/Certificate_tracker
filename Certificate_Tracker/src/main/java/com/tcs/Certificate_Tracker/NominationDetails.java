@@ -1,12 +1,13 @@
 package com.tcs.Certificate_Tracker;
 
-import java.sql.Timestamp;
 import javax.persistence.*;
 
 @Entity
-public class Nomination_details {
+@Table(name="Nomination_Details")
+public class NominationDetails {
 
 	@Id
+	@GeneratedValue
 	private long nomination_id;
 	private String quarter_no;
 	private String certification_name;
@@ -18,16 +19,16 @@ public class Nomination_details {
 	private long supervisor_id;
 	private long contact_no;
 	private String nomination_status;
-	private Timestamp submit_time;
-	private Timestamp last_update_time;
+	private String submit_time;
+	private String last_update_time;
 	
-	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="employee_id")
 	private Employee  emp;
 	
-	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="certification_id")
-	private Certification_Catalog  certcatlog;
+	private CertificationCatalog  certcatlog;
 	
 	
 	public Employee getEmp() {
@@ -103,16 +104,23 @@ public class Nomination_details {
 	public void setNomination_status(String nomination_status) {
 		this.nomination_status = nomination_status;
 	}
-	public Timestamp getSubmit_time() {
+	public String getSubmit_time() {
 		return submit_time;
 	}
-	public void setSubmit_time(Timestamp submit_time) {
+	public void setSubmit_time(String submit_time) {
 		this.submit_time = submit_time;
 	}
-	public Timestamp getLast_update_time() {
+	public String getLast_update_time() {
 		return last_update_time;
 	}
-	public void setLast_update_time(Timestamp last_update_time) {
+	public void setLast_update_time(String last_update_time) {
 		this.last_update_time = last_update_time;
 	}
+	public CertificationCatalog getCertcatlog() {
+		return certcatlog;
+	}
+	public void setCertcatlog(CertificationCatalog certcatlog) {
+		this.certcatlog = certcatlog;
+	}
+
 }

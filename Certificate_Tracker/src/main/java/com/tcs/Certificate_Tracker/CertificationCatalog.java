@@ -11,7 +11,7 @@ import java.util.*;
 
 @Entity
 @Table(name="Certification_Catalog")
-public class Certification_Catalog {
+public class CertificationCatalog {
 	
 	@Id
 	private int certification_id;
@@ -41,8 +41,6 @@ public class Certification_Catalog {
 	private String reference_certification_name;
 	private String reference_certification_type;
 	
-	@OneToMany(mappedBy="certcatlog",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Nomination_details> nomdtls;
 	
 	public int getCertification_id() {
 		return certification_id;
