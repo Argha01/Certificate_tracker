@@ -8,9 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 @EntityScan
-public class CertificateTrackerApplication {
-
-	public static void main(String[] args) {
+public class CertificateTrackerApplication 
+{
+	public static void main(String[] args) 
+	{
 		System.out.println("Argha Here");
 		SpringApplication.run(CertificateTrackerApplication.class, args);
 	}

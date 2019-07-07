@@ -3,10 +3,12 @@ package com.tcs.Certificate_Tracker.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +17,7 @@ import com.tcs.Certificate_Tracker.CertificationCatalog;
 import com.tcs.Certificate_Tracker.Employee;
 import com.tcs.Certificate_Tracker.NominationDetails;
 import com.tcs.Certificate_Tracker.service.MainService;
+import com.tcs.Certificate_Tracker.ActivityDetails;
 
 @RestController
 public class MainController {
@@ -22,18 +25,6 @@ public class MainController {
 	@Autowired
 	private MainService mainservice;
 	
-	@GetMapping("/api/certificat_tracker/getbudget")
-    public Iterable findAllBudgetDetails() {
-        return mainservice.findAllBudgetDetails();
-    }
- 
-	
-	@PostMapping("/api/certificat_tracker/createbudget")
-    @ResponseStatus(HttpStatus.CREATED)
-	public BudgetDetails createBudget(@RequestBody BudgetDetails budget) {
-        return mainservice.create(budget);
-    }
-
 	@GetMapping("/api/certificat_tracke/getallcertificate")
     public Iterable findAllCertificate() {
         return mainservice.findAllCert();
@@ -64,10 +55,13 @@ public class MainController {
         return mainservice.findAllNominations();
     }
 	
-	@PostMapping("/api/certificat_tracker/createnomdetails")
-    @ResponseStatus(HttpStatus.CREATED)
-    public NominationDetails createNomination(@RequestBody NominationDetails nom) {
-        return mainservice.createNomination(nom);
+	
+	@PostMapping("/api/certificat_tracker/{activityacode}")
+    public @ResponseBody ActivityDetails Call(@PathVariable String activityacode, @RequestBody NominationDetails nom) {
+       
+		System.out.println("NominationDetails "+nom);
+		return mainservice.Call(activityacode, nom);
     }
+	
 	
 }

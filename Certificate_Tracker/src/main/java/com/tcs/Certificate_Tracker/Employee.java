@@ -1,14 +1,12 @@
 package com.tcs.Certificate_Tracker;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name="Employee_Details")
 public class Employee {
 	@Id
-	private int employee_id;
+	private Integer employee_id;
 	private String m_id;
 	private String employee_name;
 	private String email_id;
@@ -17,10 +15,10 @@ public class Employee {
 	private String department_name;
 	
 	
-	public int getEmployee_id() {
+	public Integer getEmployee_id() {
 		return employee_id;
 	}
-	public void setEmployee_id(int employee_id) {
+	public void setEmployee_id(Integer employee_id) {
 		this.employee_id = employee_id;
 	}
 	public String getM_id() {
