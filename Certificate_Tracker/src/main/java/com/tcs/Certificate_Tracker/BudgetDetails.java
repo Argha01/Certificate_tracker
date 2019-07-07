@@ -9,40 +9,40 @@ import javax.persistence.Table;
 public class BudgetDetails {
 	@Id
 	private int quarter_no;
-	private int total_budget;
-	private int nomination_budget;
-	private int actual_budget;
-	private int under_utilized_budget;
-	
+	private long total_budget;
+	private long nomination_budget;
+	private long actual_budget;
+	private long under_utilized_budget;
 	public int getQuarter_no() {
 		return quarter_no;
 	}
 	public void setQuarter_no(int quarter_no) {
 		this.quarter_no = quarter_no;
 	}
-	public int getTotal_budget() {
+	public long getTotal_budget() {
 		return total_budget;
 	}
-	public void setTotal_budget(int total_budget) {
+	public void setTotal_budget(long total_budget) {
 		this.total_budget = total_budget;
 	}
-	public int getNomination_budget() {
+	public long getNomination_budget() {
 		return nomination_budget;
 	}
-	public void setNomination_budget(int nomination_budget) {
+	public void setNomination_budget(long nomination_budget) {
 		this.nomination_budget = nomination_budget;
 	}
-	public int getActual_budget() {
+	public long getActual_budget() {
 		return actual_budget;
 	}
-	public void setActual_budget(int actual_budget) {
+	public void setActual_budget(long actual_budget) {
 		this.actual_budget = actual_budget;
 	}
-	public int getUnder_utilized_budget() {
+	public long getUnder_utilized_budget() {
 		return under_utilized_budget;
 	}
-	public void setUnder_utilized_budget(int under_utilized_budget) {
+	public void setUnder_utilized_budget(long under_utilized_budget) {
 		this.under_utilized_budget = under_utilized_budget;
 	}
 	
+		
 }
