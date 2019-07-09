@@ -60,7 +60,7 @@
     				<version>3.7.0</version>
     					<configuration>
         					<fork>true</fork>
-        						<executable>/usr/lib/jvm/java-11-openjdk-amd64/bin/javac</executable>
+        						<executable>/home/spportal/jdk1.8.0_211/bin/javac</executable>
     					</configuration>
 			</plugin>
 		</plugins>
